@@ -1,0 +1,54 @@
+.body_top{
+    background-color: #1d2124;
+}
+
+.user_image{
+    border-radius: 50px;
+}
+
+.fa{
+    height: 30px;
+    width: 30px;
+}
+
+.complete_card{
+    height: 100%;
+    width: 100%;
+    background-color: #1f1f1d;
+    border-radius: 15px;
+    box-shadow: 1px 1px 1px #464646;
+    color: white;
+
+}
+.complete_card1{
+
+    height: 100%;
+    width: 100%;
+    /*margin-left: 100px;*/
+    border-radius: 15px;
+    box-shadow: 1px 1px 1px #464646;
+    background-color: #232222;
+    color: white;
+
+}
+
+.complete_card2{
+
+    height: 100%;
+    width: 100%;
+    /*margin-left: 100px;*/
+    border-radius: 15px;
+    box-shadow: 1px 1px 1px #464646;
+    background-color: #1e1b1b;
+    color: white;
+
+}
+
+footer{
+    background-color: #0a0400;
+    padding: 2%;
+    color: white;
+}
+hr{
+    background-color: white;
+}

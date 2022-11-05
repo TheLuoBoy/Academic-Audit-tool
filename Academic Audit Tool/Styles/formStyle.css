@@ -1,0 +1,23 @@
+.top-layer{
+    padding-bottom: 5px;
+    padding-top: 5px;
+    background-color: #0873ee;
+}
+
+#publication_form1 button{
+    margin-right: 100px;
+}
+
+.table1{
+    padding: 150px;
+}
+
+.publication_table{
+    width: 600px;
+}
+
+.mycard{
+    float: top;
+}
+
+
