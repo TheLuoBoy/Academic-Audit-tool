@@ -303,9 +303,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `Academic_Audit_db`.`courses_activity_sem1`
+-- Table `Academic_Audit_db`.`courses_activity`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `Academic_Audit_db`.`courses_activity_sem1` (
+CREATE TABLE IF NOT EXISTS `Academic_Audit_db`.`courses_activity` (
   `course_activity_id` INT NOT NULL,
   `name` VARCHAR(45) NULL,
   `type` ENUM('ACTIVITY', 'COURSE') NULL,
@@ -433,17 +433,6 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `Academic_Audit_db`.`courses_activity_sem2`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `Academic_Audit_db`.`courses_activity_sem2` (
-  `course_activity_id` INT NOT NULL,
-  `name` VARCHAR(45) NULL,
-  `type` ENUM('ACTIVITY', 'COURSE') NULL,
-  PRIMARY KEY (`course_activity_id`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
 -- Table `Academic_Audit_db`.`courses_activity_sem1_has_weekly_workload_analysis`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Academic_Audit_db`.`courses_activity_sem1_has_weekly_workload_analysis` (
@@ -454,7 +443,7 @@ CREATE TABLE IF NOT EXISTS `Academic_Audit_db`.`courses_activity_sem1_has_weekly
   INDEX `fk_courses_activity_sem1_has_weekly_workload_analysis_cours_idx` (`courses_activity_sem1_course_activity_id` ASC) VISIBLE,
   CONSTRAINT `fk_courses_activity_sem1_has_weekly_workload_analysis_courses1`
     FOREIGN KEY (`courses_activity_sem1_course_activity_id`)
-    REFERENCES `Academic_Audit_db`.`courses_activity_sem1` (`course_activity_id`)
+    REFERENCES `Academic_Audit_db`.`courses_activity` (`course_activity_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_courses_activity_sem1_has_weekly_workload_analysis_weekly_1`
@@ -474,14 +463,14 @@ CREATE TABLE IF NOT EXISTS `Academic_Audit_db`.`courses_activity_sem2_has_weekly
   PRIMARY KEY (`courses_activity_sem2_course_activity_id`, `weekly_workload_analysis_workload_id`),
   INDEX `fk_courses_activity_sem2_has_weekly_workload_analysis_weekl_idx` (`weekly_workload_analysis_workload_id` ASC) VISIBLE,
   INDEX `fk_courses_activity_sem2_has_weekly_workload_analysis_cours_idx` (`courses_activity_sem2_course_activity_id` ASC) VISIBLE,
-  CONSTRAINT `fk_courses_activity_sem2_has_weekly_workload_analysis_courses1`
-    FOREIGN KEY (`courses_activity_sem2_course_activity_id`)
-    REFERENCES `Academic_Audit_db`.`courses_activity_sem2` (`course_activity_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
   CONSTRAINT `fk_courses_activity_sem2_has_weekly_workload_analysis_weekly_1`
     FOREIGN KEY (`weekly_workload_analysis_workload_id`)
     REFERENCES `Academic_Audit_db`.`weekly_workload_analysis` (`workload_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_courses_activity_sem2_has_weekly_workload_analysis_courses1`
+    FOREIGN KEY (`courses_activity_sem2_course_activity_id`)
+    REFERENCES `Academic_Audit_db`.`courses_activity` (`course_activity_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
