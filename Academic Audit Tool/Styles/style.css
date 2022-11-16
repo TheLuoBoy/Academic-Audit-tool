@@ -52,3 +52,32 @@ footer{
 hr{
     background-color: white;
 }
+
+.formArea{
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    background-color: #515c65;
+    box-shadow: 2px 2px 2px #263344;
+}
+
+iframe{
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+
+
+.myhovers:hover{
+    background-color: #f3469b;
+    margin: 15px;
+}
+
+
+
+
+
+
+
+
+
